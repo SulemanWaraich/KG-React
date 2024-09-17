@@ -1,0 +1,9 @@
+.weather-info {
+  margin-top: 20px;
+}
+
+.weather-info h2,
+.weather-info p {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
