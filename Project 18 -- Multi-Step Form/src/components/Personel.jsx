@@ -5,14 +5,14 @@ import { useForm } from "../contexts/FormContext";
 function Personel() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const {setData} = useForm();
+  const { setData } = useForm();
   const navigate = useNavigate();
 
   const personelData = (e) => {
     e.preventDefault();
-    setData({name, email}); 
-    navigate("/address")
-  }
+    setData((prevData) => ({ ...prevData, name, email }));
+    navigate("/address");
+  };
 
   return (
     <div className="flex flex-col items-center justify-center space-y-8">
@@ -31,7 +31,7 @@ function Personel() {
           placeholder="Enter Your Name"
           className="border-black border-2 px-4 py-2"
           value={name}
-          onChange={(e)=> setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="" className="font-medium text-xl">
           Email:{" "}
@@ -41,7 +41,7 @@ function Personel() {
           placeholder="Enter Your Email"
           className="border-black border-2 px-4 py-2"
           value={email}
-          onChange={(e)=> setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="mt-4 border-2 border-black rounded-lg px-4 py-2 bg-blue-500 text-2xl">

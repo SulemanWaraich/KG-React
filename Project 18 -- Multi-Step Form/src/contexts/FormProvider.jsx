@@ -7,7 +7,7 @@ export function FormProvider({ children }) {
     email: '',
     country: '',
     city: '',
-    notification: false,
+    notification: '',
   });
 
   return (
