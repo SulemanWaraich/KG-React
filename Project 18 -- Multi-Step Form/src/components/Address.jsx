@@ -11,13 +11,20 @@ function Address() {
 
   const personel = (e) => {
     e.preventDefault();
-    setData((prevData) => ({
-      ...prevData,
-      city,
-      country,
-    }));
-    
-    navigate("/preferences");
+    if(city === '')
+    {
+      alert('please fill in the field')
+    }
+    else
+    {
+      setData((prevData) => ({
+        ...prevData,
+        city,
+        country,
+      }));
+      
+      navigate("/preferences");
+    }
   };
 
   return (

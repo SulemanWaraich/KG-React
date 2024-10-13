@@ -10,8 +10,15 @@ function Personel() {
 
   const personelData = (e) => {
     e.preventDefault();
-    setData((prevData) => ({ ...prevData, name, email }));
-    navigate("/address");
+    if(name === '' && email === '')
+    {
+      alert('Please fill in both fields')
+    }
+    else
+    {
+      setData((prevData) => ({ ...prevData, name, email }));
+      navigate("/address");
+    }
   };
 
   return (
